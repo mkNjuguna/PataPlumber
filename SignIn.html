@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/PataPlumberLogo.png">
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body id="signin-page-body">
+<span class="navbar">
+    <a href="HomePage.html"><img  id="page_logo" src="images/PataPlumberLogo.png" alt="pagelogo"/></a>
+    <ul>
+    </ul>
+</span>
+<div id="signin-as-plumber-main-container">
+    <h2 style="text-align: center; font-family: Arvo, serif; font-weight: bold; font-size: 20px;">Sign In as a Plumber</h2>
+    <div id="signin-as-plumber-container">
+        <label class="plumber-email-label" for="plumber-email-signin-input">Email:
+        <div>
+            <input id="plumber-email-signin-input" type="email" name="email-address" placeholder="example@example.com" required="required">
+            <span class="plumber-email-warning-text"></span>
+        </div>
+        </label>
+        <div id="plumber-signin-password-container">
+            <label class="plumber-password-label" for="plumber-password-signin-input">Password:
+            <div>
+                <input id="plumber-password-signin-input" type="password" name="password" minlength="8" maxlength="25">
+                <span class="plumber-password-warning-text"></span>
+            </div>
+            </label>
+        </div>
+    </div>
+    <div id="plumber-signin-btn-container">
+        <button type="button" id="plumber-signin-btn" onclick="signInPlumber()">Sign In</button>
+    </div>
+</div>
+<div id="signin-as-homeuser-main-container">
+    <h2 style="text-align: center; font-family: Arvo, serif; font-weight: bold; font-size: 20px; color: #004BFF">Sign In as a Home user</h2>
+    <div id="signin-as-homeuser-container">
+        <label class="homeuser-email-label" for="homeuser-email-signin-input">Email:
+        <div>
+            <input id="homeuser-email-signin-input" type="email" name="email-address" placeholder="example@example.com" required="required">
+            <span class="email-warning-text"></span>
+        </div>
+        </label>
+        <div id="homeuser-signin-password-container">
+            <label class="homeuser-password-label" for="homeuser-password-signin-input">Password:
+            <div>
+                <input id="homeuser-password-signin-input" maxlength="25" minlength="8" name="password" type="password">
+                <span class="password-warning-text"></span>
+            </div>
+            </label>
+        </div>
+    </div>
+    <div id="homeuser-signin-btn-container">
+        <button type="button" id="homeuser-signin-btn" onclick="signInHomeUser()">Sign In</button>
+    </div>
+</div>
+<!--User input validation-->
+<script>
+    // Plumber sign in validation
+    const plumbersigninemail = document.getElementById("plumber-email-signin-input");
+    const plumbersigninpassword = document.getElementById("plumber-password-signin-input");
+
+    plumbersigninemail.addEventListener('input',()=>{
+        const emailBox = document.querySelector('.plumber-email-label');
+        const emailText = document.querySelector('.plumber-email-warning-text');
+        const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+
+        if (plumbersigninemail.value.match(emailPattern)){
+            emailBox.classList.add('valid');
+            emailBox.classList.remove('invalid');
+            emailText.innerHTML = "Your Email Address is Valid";
+        }else{
+            emailBox.classList.add('invalid');
+            emailBox.classList.remove('valid');
+            emailText.innerHTML = "Must be a valid email address";
+        }
+    })
+
+    plumbersigninpassword.addEventListener('input',()=>{
+        const passwordBox = document.querySelector('.plumber-password-label');
+        const passwordText = document.querySelector('.plumber-password-warning-text');
+        const passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+        if (plumbersigninpassword.value.match(passwordPattern)){
+            passwordBox.classList.add('valid');
+            passwordBox.classList.remove('invalid');
+            passwordText.innerHTML = "Your password is okay! ";
+        }else{
+            passwordBox.classList.add('invalid');
+            passwordBox.classList.remove('valid');
+            passwordText.innerHTML = "Your password must be at least 8 \n" +
+                "\t\t\t\t\t\tcharacters as well as contain at least one uppercase, one lowercase, and one number.";
+        }
+    });
+
+    // Home user sign in validation
+
+    const homeusersigninemail = document.getElementById("homeuser-email-signin-input");
+    const homeusersigninpassword = document.getElementById("homeuser-password-signin-input");
+
+    homeusersigninemail.addEventListener('input',()=>{
+        const emailBox = document.querySelector('.homeuser-email-label');
+        const emailText = document.querySelector('.email-warning-text');
+        const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+
+        if (homeusersigninemail.value.match(emailPattern)){
+            emailBox.classList.add('valid');
+            emailBox.classList.remove('invalid');
+            emailText.innerHTML = "Your Email Address is Valid ";
+        }else{
+            emailBox.classList.add('invalid');
+            emailBox.classList.remove('valid');
+            emailText.innerHTML = "Must be a valid email address";
+        }
+    });
+
+    homeusersigninpassword.addEventListener('input',()=>{
+        const passwordBox = document.querySelector('.homeuser-password-label');
+        const passwordText = document.querySelector('.password-warning-text');
+        const passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+        if (homeusersigninpassword.value.match(passwordPattern)){
+            passwordBox.classList.add('valid');
+            passwordBox.classList.remove('invalid');
+            passwordText.innerHTML = "Your password is okay! ";
+        }else{
+            passwordBox.classList.add('invalid');
+            passwordBox.classList.remove('valid');
+            passwordText.innerHTML = "Your password must be at least 8 \n" +
+                "\t\t\t\t\t\tcharacters as well as contain at least one uppercase, one lowercase, and one number.";
+        }
+    });
+</script>
+<script>
+    let firebaseConfig = {
+        apiKey: "AIzaSyD34lMguiFE6v42iogGbqXJwUWEQ8R1yb8",
+        authDomain: "pataplumberwebapp.firebaseapp.com",
+        projectId: "pataplumberwebapp",
+        storageBucket: "pataplumberwebapp.appspot.com",
+        messagingSenderId: "982863800233",
+        appId: "1:982863800233:web:c12dd80a5489ca6cae86b8",
+        measurementId: "G-LQL7QRQKYG"
+    };
+    //Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/signInUsers.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,1811 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    display: inline-block;
+    top: 8px;
+    margin-top: -20px;
+    position: fixed;
+
+}
+
+button:hover{
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}
+
+#page_logo{
+    vertical-align: top;
+    display: inline-block;
+    position: fixed;
+    width: 200px;
+    margin-left: -20px;
+    transition: width 400ms;
+}
+
+#page_logo:hover{
+    width: 210px;
+}
+
+#about_us_btn{
+    width: 128px;
+    height: 46px;
+    right: 150px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+
+    cursor: pointer;
+    position:fixed;
+    transition: width 400ms;
+
+}
+#about_us_btn:hover{
+    width: 140px;
+}
+
+#register_btn:hover{
+    width: 140px;
+}
+
+#sign_in:hover{
+    width: 140px;
+}
+
+#admin_login:hover{
+    width: 140px;
+}
+#sign_out:hover{
+    width: 140px;
+}
+
+#register_btn{
+    width: 128px;
+    height: 46px;
+    right: 5px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #0036B3;
+
+    cursor: pointer;
+    position:fixed;
+    transition: width 400ms;
+
+}
+#admin_login{
+    width: 128px;
+    height: 46px;
+    right: 310px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFB300;
+
+    cursor: pointer;
+    position:fixed;
+    transition: width 400ms;
+}
+#sign_in{
+    width: 128px;
+    height: 46px;
+    right: 10px;
+
+    border: 1px solid #004BFF;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #004BFF;
+
+    cursor: pointer;
+    position:fixed;
+    transition: width 400ms;
+
+}
+#sign_out{
+    width: 128px;
+    height: 46px;
+    right: 10px;
+
+    border: 1px solid #004BFF;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #004BFF;
+
+    cursor: pointer;
+    position:fixed;
+    transition: width 400ms;
+
+}
+
+
+
+/*Styles the body in the homepage*/
+#home_page_body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) -10%, rgba(255, 255, 255, 0) 90%), url(../images/plumber_612x612.jpg);
+    background-size: cover;
+
+    /*background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0) 100%), url(./images/plumber_612x612.jpg);*/
+    /*box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);*/
+    /*border-radius: 0;*/
+    /*background-size: cover;*/
+}
+
+/*Remember to highlight with blue*/
+#welcome_text{
+    width: 368px;
+    height: 169px;
+    left: 10px;
+    top: 196px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+
+    position:fixed;
+    background-color: #004BFF;
+    color: white;
+}
+
+/*Styles the body in the about page*/
+#about_body{
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%), url(../images/AboutPlumbingTools.jpg);
+    mix-blend-mode: normal;
+    background-size: cover;
+
+}
+#about_heading{
+    position: absolute;
+    width: 275px;
+    height: 89px;
+    left: 520px;
+    top: 40px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 89px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #000000;
+
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+#about_main_paragraph{
+    position: absolute;
+    width: 950px;
+    height: 423px;
+    left: 150px;
+    top: 70px;
+
+    font-family: Roboto, serif, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+#signuplink{
+    position: absolute;
+    width: 652px;
+    height: 86px;
+    left: 400px;
+    top: 350px;
+    color: #004BFF;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.signup-bg{
+    position: fixed;
+    width: 1920px;
+    height: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    filter: blur(3px);
+    background: url("../images/signupbackground.png") no-repeat center center;
+}
+
+#signup-as-plumber-main-container{
+    position: absolute;
+    width: 400px;
+    height: 320px;
+    left: 93px;
+    top: 120px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+#signin-as-plumber-main-container{
+    position: absolute;
+    width: 400px;
+    height: 320px;
+    left: 93px;
+    top: 120px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+#signin-as-plumber-container{
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#plumber-email-signin-input{
+    width: 100%;
+    line-height: 22px;
+}
+
+#plumber-signin-password-container{
+    padding-top: 10px;
+
+}
+
+#plumber-password-signin-input{
+    width: 100%;
+    line-height: 22px;
+}
+
+#plumber-signin-btn-container{
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 22px;
+}
+
+#plumber-signin-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    background: #FFB300;
+    border: none;
+    border-radius: 2px;
+
+    width: 100%;
+    line-height: 30px;
+
+}
+
+#signin-as-homeuser-main-container{
+    position: absolute;
+    width: 400px;
+    height: 320px;
+    left: 770px;
+    top: 120px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#signin-as-homeuser-container{
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#signup-as-homeuser-main-container{
+    position: absolute;
+    width: 400px;
+    height: 320px;
+    left: 770px;
+    top: 120px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#signup-as-homeuser-container{
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.homeuser-email-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+.homeuser-signup-email-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+#homeuser-email-signup-input{
+    width: 100%;
+    line-height: 22px;
+
+}
+
+#homeuser-email-signin-input{
+    width: 100%;
+    line-height: 22px;
+}
+#homeuser-signin-password-container{
+    padding-top: 10px;
+}
+
+#homeuser-signup-password-container{
+    padding-top: 10px;
+}
+
+.homeuser-password-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+.homeuser-signup-password-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+#homeuser-password-signup-input{
+    width: 100%;
+    line-height: 22px;
+}
+
+#homeuser-password-signin-input{
+    width: 100%;
+    line-height: 22px;
+
+}
+
+#homeuser-signin-btn-container{
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 22px;
+}
+#homeuser-signin-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    background: #FFB300;
+    border: none;
+    border-radius: 2px;
+
+    width: 100%;
+    line-height: 30px;
+
+}
+
+
+#homeuser-signup-btn-container{
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 22px;
+}
+
+#homeuser-signup-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    background: #FFB300;
+    border: none;
+    border-radius: 2px;
+
+    width: 100%;
+    line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+#signupformplumber{
+    align-content: center;
+}
+
+.plumber-signup-email-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+#plumber-email-signup-input{
+    width: 100%;
+    line-height: 22px;
+}
+
+#plumber-signup-password-container{
+    padding-top: 10px;
+}
+.plumber-signup-password-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+#plumber-password-signup-input{
+    width: 100%;
+    line-height: 22px;
+}
+
+#plumber-signup-btn-container{
+     padding-top: 25px;
+     padding-left: 30px;
+     padding-right: 22px;
+}
+
+#plumber-signup-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    background: #FFB300;
+    border: none;
+    border-radius: 2px;
+
+    width: 100%;
+    line-height: 30px;
+}
+
+.sign-in-text-container{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+
+#signin-page-body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) -10%, rgba(255, 255, 255, 0) 90%), url(../images/signinbackground.jpg);
+    background-size: cover;
+
+}
+#signup-as-plumber-container{
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#plumber-email-input-container{
+    width: 100%;
+}
+#signinplumberformholder{
+    padding-top: 20px;
+    padding-left: 115px;
+}
+
+#plumber_home_body{
+
+}
+.plumber-bio-container{
+     position: absolute;
+     width: 400px;
+     height: 500px;
+     left: 10px;
+     top: 80px;
+
+     background: white;
+     border: 1.5px solid #000000;
+     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+     border-radius: 6px;
+ }
+ #fill-bio-header{
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 18px;
+     line-height: 30px;
+     text-transform: capitalize;
+
+     color: #004BFF;
+
+     text-align: left;
+     padding-left: 25px;
+ }
+ #plumber-bio-form{
+     padding-left: 25px;
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 16px;
+     line-height: 22px;
+     text-transform: capitalize;
+
+     color: #000000;
+ }
+ #plumber-service-container{
+     position: absolute;
+     width: 400px;
+     height: 150px;
+     left: 430px;
+     top: 80px;
+
+     background: white;
+     border: 1.5px solid #000000;
+     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+     border-radius: 25px;
+ }
+ .plumber-input-cells{
+     border: 1px solid #000000;
+ }
+
+ #upload-document-header{
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 16px;
+     line-height: 22px;
+     text-transform: capitalize;
+
+     color: #000000;
+ }
+
+ #service-to-offer-header{
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 18px;
+     line-height: 22px;
+     text-transform: capitalize;
+
+     color: #004BFF;
+
+     text-align: left;
+
+ }
+ #service-type-form {
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 14px;
+     line-height: 22px;
+     text-transform: capitalize;
+
+     color: #000000;
+     padding-left: 25px;
+ }
+
+ .bio-submit-btn{
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 14px;
+     line-height: 30px;
+     color: #000000;
+
+     border-radius:2px;
+     border: 1px solid;
+     background-color: #FFB300;
+ }
+
+ #to-profile-page{
+     position: absolute;
+     width: 300px;
+     height: auto;
+     right: 50px;
+     top: 80px;
+
+ }
+ #plumber-profile-output-container{
+     position: absolute;
+     width: 400px;
+     height: 350px;
+     right: 30px;
+     top: 80px;
+
+     background: white;
+     border: 1px solid #000000;
+     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+     border-radius: 6px;
+ }
+ #plumber-profile-output-header{
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 18px;
+     line-height: 22px;
+     text-transform: capitalize;
+
+     color: #004BFF;
+
+     text-align: left;
+     padding-left: 25px;
+
+ }
+ .plumber-output-cells:focus{
+     outline: none;
+
+ }
+
+ #plumber-profile-output-table{
+     font-family: Roboto, serif;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 16px;
+     line-height: 22px;
+     color: #000000;
+     padding-left: 25px;
+ }
+ #plumber-profile-btn-container{
+     padding-left: 25px;
+ }
+.plumber-profile-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    border-radius: 2px;
+    border: 1px solid;
+    background-color: #FFB300;
+}
+#get-data-container{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+    padding-left: 25px;
+}
+
+#admin-login-body{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) -10%, rgba(255, 255, 255, 0) 50%), url("../images/adminLogIn.jpg");
+    background-size: cover;
+}
+
+#admin-login-container{
+    position: absolute;
+    width: 406px;
+    height: 400px;
+    left: 429px;
+    top: 80px;
+    
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+
+.admin-login-heading{
+    width: 406px;
+    height: 53px;
+    left: 429px;
+    top: 58px;
+
+    background: #0036B3;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#admin-login-form{
+    padding-left: 15px;
+    padding-right: 18px;
+}
+
+#admin-page-logo{
+    width: 158px;
+    height: 55px;
+    display: block;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50%;
+    background-size: contain;
+    font-size: 0;
+    background-image: url(../images/PataPlumberLogo.png);
+    margin-bottom: 8px;
+    margin-left: auto;
+}
+
+#admin-email{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    margin: 0 0 11px;
+
+    color: #000000;
+}
+
+#admin-password-column{
+    padding-top: 30px;
+}
+#admin-email-input{
+    width: 100%;
+    line-height: 24px;
+}
+
+#admin-password{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    margin: 0 0 11px;
+
+    color: #000000;
+
+}
+
+#admin-password-input{
+    width: 100%;
+    line-height: 24px;
+}
+
+#admin-btn-column{
+    padding-top: 70px;
+
+}
+#admin-login-btn{
+    width: 100%;
+
+    background: #FFB300;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #000000;
+    border: none;
+}
+
+#admin-dashboard-body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) -10%, rgba(255, 255, 255, 0) 50%), url("../images/signupbackground.png");
+    background-size: cover;
+
+}
+#admin-welcome-container{
+    padding-top: 60px;
+    padding-left: 10px;
+}
+
+#admin-welcome-message{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+#generate-plumber-report-container{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#plumber-data-container{
+    position: absolute;
+    width: 400px;
+    height: 460px;
+    padding-top: 10px;
+    top: 100px;
+    left: 10px;
+    border: 1px solid;
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+#customer-data-container{
+    position: absolute;
+    width: 400px;
+    height: 460px;
+    padding-top: 10px;
+    top: 100px;
+    left: 430px;
+    border: 1px solid;
+    background: #FFFFFF;
+    border-radius: 6px;
+
+}
+
+/*#plumber-report-output{*/
+/*    font-family: Roboto, serif;*/
+/*    font-style: normal;*/
+/*    font-weight: bold;*/
+/*    font-size: 14px;*/
+/*    line-height: 24px;*/
+/*    text-align: center;*/
+/*    color: #000000;*/
+
+/*    border-collapse: collapse;*/
+/*    width: 100%;*/
+
+/*}*/
+
+/*th.plumber-report{*/
+/*    text-align: left;*/
+/*    padding: 8px;*/
+/*    border: 1px solid;*/
+/*}*/
+
+#home-user-body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.98) -10%, rgba(255, 255, 255, 0) 80%), url("../images/homeUserBackground.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#home-user-welcome-container{
+    padding-left: 20px;
+    padding-top: 70px;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#service-selection-container{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 20px;
+    top: 130px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+#service-selection-header {
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    padding-left: 16px;
+
+    color: #0036B3;
+}
+#service-selection-text{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 14px;
+    align-items: center;
+    padding-left: 16px;
+}
+#service-dropbox-container{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 12px;
+
+    border: none;
+}
+#service-selection-btn-column{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+}
+#show-available-plumbers-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    width: 100%;
+    border: none;
+    background-color: #FFB300;
+    border-radius: 2px;
+}
+
+#geolocation-heading{
+    position: absolute;
+    left: 415px;
+    top: 55px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: black;
+}
+
+#plumber-map{
+    position: absolute;
+    width: 370px;
+    left: 440px;
+    top: 110px;
+    height: 350px;
+    border-radius: 6px;
+}
+
+#location-button-container{
+    position: absolute;
+    top: 100px;
+    left: 440px;
+}
+
+#geo-track-map{
+    position: absolute;
+    left: 400px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#request-plumber-container{
+    position: absolute;
+    left: 400px;
+    top: 510px;
+
+}
+#request-plumber-btn{
+
+    width: fit-content;
+    border: none;
+    border-radius: 2px;
+    background-color: #FFB300;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+}
+#plumber-requested-heading-container{
+    position: absolute;
+    right: 300px;
+    top: 50px;
+}
+
+#plumber-requested-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #0036B3;
+}
+
+#requested-plumber-container{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    right: 105px;
+    top: 97px;
+
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#live-chat-container{
+    position: absolute;
+    right: 4px;
+    top: 100px;
+}
+#WAButton{
+    font-family: Roboto, serif;
+    font-style: normal;
+    position: absolute;
+    top: 150px;
+}
+
+#service-timer-counter-container{
+    position: absolute;
+    width: 345px;
+    height: 150px;
+    right: 110px;
+    top: 360px;
+
+    border: 2px solid black;
+    border-radius: 6px;
+    background: #FFFFFF;
+}
+#service-duration-heading{
+    text-align: center;
+    color: #0036B3;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 15px;
+}
+
+#total-duration-text{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 10px;
+    padding-top: 35px;
+}
+
+#start-service-timer-container{
+    position: absolute;
+    top: 330px;
+    right: 334px;
+}
+#end-service-timer-container{
+    position: absolute;
+    top: 330px;
+    right: 105px;
+}
+
+#start-stop-service-timer-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+
+    border: none;
+    background-color: #FFB300;
+    line-height: 22px;
+
+}
+#reset-service-timer-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    border: none;
+    background-color: #FFB300;
+    line-height: 22px;
+}
+
+#proceed-to-payment-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    border: none;
+    background-color: #FFB300;
+    line-height: 22px;
+
+}
+
+#proceed-to-payment-btn-container{
+    position: absolute;
+    top: 530px;
+    right: 105px;
+}
+
+#payment-information-container{
+    position: absolute;
+    width: 401px;
+    height: 343px;
+    left: 440px;
+    top: 111px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+#payment-information-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: center;
+    color: #0036B3;
+    padding-top: 14px;
+}
+
+#total-duration-container{
+    padding-left: 16px;
+    padding-top: 40px;
+
+}
+#total-duration-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+#total-duration-output{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #004BFF;
+
+    padding-left: 73px;
+}
+
+#service-rate-container{
+    padding-left: 16px;
+    padding-top: 14px;
+
+}
+
+#service-rate-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+#service-rate-output{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #004BFF;
+
+    padding-left: 16px;
+}
+#calculate-bill-btn-container{
+    padding-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#calculate-bill-btn{
+    width: 100%;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    border: 1px solid;
+    background: #FFB300;
+    border-radius: 2px;
+}
+#total-amount-container{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    color: #004BFF;
+
+    padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+}
+
+#mpesa-payment-container{
+    position: absolute;
+    width: 401px;
+    height: 343px;
+    right: 20px;
+    top: 111px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+#pay-securely-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: center;
+    color: #0036B3;
+    padding-top: 14px;
+
+}
+#mpesa-logo{
+    width: 160px;
+    height: 56px;
+    display: block;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50%;
+    background-size: contain;
+    font-size: 0;
+    background-image: url(../images/1200px-M-PESA_LOGO-01.png);
+    margin-bottom: 8px;
+    margin-left: auto;
+    padding-top: 18px;
+}
+#payment-phone-number-container{
+    padding-top: 18px;
+    padding-left: 16px;
+    padding-right: 24px;
+}
+#payment-phone-number-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+#payment-phone-number-input-container{
+    padding-top: 14px;
+}
+#payment-phone-number-input{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+
+    width: 100%;
+    line-height: 30px;
+}
+#pay-total-amnt-btn-container{
+    padding-top: 70px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+#pay-total-amnt-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    width: 100%;
+    border: 1px solid;
+    border-radius: 2px;
+    background: #FFB300;
+}
+
+#generate-plumber-report-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    width: 100%;
+    border: 1px solid;
+    border-radius: 2px;
+    background: #FFB300;
+}
+
+#payment-page-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    filter: blur(2px);
+    background: url("../images/payment-bg.png") no-repeat center center;
+}
+
+#total-duration-container-huser{
+    padding-left: 4px;
+
+}
+
+#stopwatch-display{
+    padding-top: 8px;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+
+    padding-left: 10px;
+}
+#plumber-geolocation-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #0036B3;
+
+    padding-left: 430px;
+    padding-top: 40px;
+}
+
+#customer-details-container{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+
+    padding-left: 16px;
+}
+
+#customer-details-heading{
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    color: #0036B3;
+}
+#customer-fname-container{
+    padding-top: 4px;
+}
+#customer-sname-container{
+    padding-top: 4px;
+}
+#customer-phonenumber-container{
+    padding-top: 4px;
+}
+
+#generate-customer-report-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    width: 100%;
+    border: 1px solid;
+    border-radius: 2px;
+    background: #FFB300;
+}
+
+#generate-customer-report-container{
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+#plumber-documents-container{
+    position: sticky;
+    width: 400px;
+    height: 100px;
+    padding-top: 10px;
+    top: 100px;
+    left: 850px;
+    border: 1px solid;
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+#download-docs-title{
+    font-family: Roboto, serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #0036B3;
+}
+
+
+
+#document_btn_cont{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#get-plumber-document-btn{
+    width: 100%;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    border: 1px solid;
+    border-radius: 2px;
+    background: #FFB300;
+}
+
+/*Home user SignIn*/
+.email-warning-text,
+.password-warning-text{
+    font-family: Roboto, serif;
+    font-weight: normal;
+    font-style: italic;
+    padding: 2px;
+}
+label.valid .email-warning-text,
+label.valid .password-warning-text{
+    color: 	#339900;
+}
+
+label.invalid .email-warning-text,
+label.invalid .password-warning-text{
+    color: 	#cc3300;
+}
+
+/*Plumber Sign In*/
+.plumber-email-warning-text,
+.plumber-password-warning-text{
+    font-family: Roboto, serif;
+    font-weight: normal;
+    font-style: italic;
+    padding: 2px;
+}
+
+label.valid .plumber-email-warning-text,
+label.valid .plumber-password-warning-text{
+    color: 	#339900;
+}
+
+label.invalid .plumber-email-warning-text,
+label.invalid .plumber-password-warning-text{
+    color: 	#cc3300;
+}
+
+/*Home User Sign Up*/
+.homeuser-signup-email-warning-text,
+.homeuser-signup-password-warning-text{
+    font-family: Roboto, serif;
+    font-weight: normal;
+    font-style: italic;
+    padding: 2px;
+}
+label.valid .homeuser-signup-email-warning-text,
+label.valid .homeuser-signup-password-warning-text{
+    color: 	#339900;
+}
+
+label.invalid .homeuser-signup-email-warning-text,
+label.invalid .homeuser-signup-password-warning-text{
+    color: 	#cc3300;
+}
+
+/*Plumber Sign Up*/
+.plumber-signup-email-warning-text,
+.plumber-signup-password-warning-text{
+    font-family: Roboto, serif;
+    font-weight: normal;
+    font-style: italic;
+    padding: 2px;
+}
+
+label.valid .plumber-signup-email-warning-text,
+label.valid .plumber-signup-password-warning-text{
+    color: 	#339900;
+}
+
+label.invalid .plumber-signup-email-warning-text,
+label.invalid .plumber-signup-password-warning-text{
+    color: 	#cc3300;
+}
+
+/*Customer request container*/
+#customer-request-container{
+    position: absolute;
+    width: 370px;
+    height: 100px;
+    right: 450px;
+    bottom: 10px;
+
+    background: white;
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 6px;
+}
+.plumber-email-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.plumber-password-label{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+#payment-search-container{
+    position: absolute;
+    width: 400px;
+    height: 343px;
+    left: 20px;
+    top: 111px;
+
+    background: white;
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 6px;
+}
+
+#get-cust-number{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: left;
+    color: #0036B3;
+    padding-top: 14px;
+    padding-left: 20px;
+}
+
+#customer-request-output-table{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#customer-number-input-container{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#customer-number-search{
+    line-height: 20px;
+}
+
+#cust-submit-btn{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+
+    border: 1px solid;
+    background: #FFB300;
+    border-radius: 2px;
+}
+
+#cust-submit-btn-container{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#plumberpage-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    filter: blur(2px);
+    background: url("../images/plumberpage-bg.jpg") no-repeat center center;
+}
+
+#loadprofile-btn-container{
+    top: 5px;
+}
+
+#requests-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #0036B3;
+
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#cumulative-bill-heading{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #0036B3;
+    padding-top: 0px;
+
+}
+
+#total-cumulative-bill-container{
+    position: sticky;
+    width: 400px;
+    height: 150px;
+    padding-top: 10px;
+    top: 250px;
+    left: 850px;
+    border: 1px solid;
+    background: #FFFFFF;
+    border-radius: 6px;
+
+}
+
+#cumulative-btn-container{
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#get-cumulative-bill-btn{
+    width: 100%;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000000;
+
+    border: 1px solid;
+    border-radius: 2px;
+    background: #FFB300;
+}
+
+#total-cumulative-bill-output-container{
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    padding-top: 20px;
+    text-align: center;
+
+    color: #004BFF;
+}
+
+
+
+
+
+
+
+
+/*label.valid::before,*/
+/*label.invalid::before{*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 24px;*/
+/*    height: 24px;*/
+/*    top: 5px;*/
+/*    right: 5px;*/
+/*    z-index: 100;*/
+/*}*/
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/PataPlumberLogo.png">
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+</head>
+<body>
+<div id="payment-page-bg"></div>
+<span class="navbar">
+    <a href="HomePage.html"><img  id="page_logo" src="images/PataPlumberLogo.png" alt="pagelogo"/></a>
+</span>
+
+<div id="payment-search-container">
+    <div id="get-cust-number">Enter Your Phone Number <br> to Get Total Cost</div>
+    <div id="customer-number-input-container">
+        <input type="text" id="customer-number-search" minlength="10" maxlength="10" placeholder="07xxx">
+    </div>
+<!--    <div id="cust-submit-btn-container">-->
+<!--        <button type="button" id="cust-submit-btn">Load Customer Profile</button>-->
+<!--    </div>-->
+    <table id="customer-request-output-table">
+        <tr>
+            <td>Title:</td>
+            <td id="customer-title-output"></td>
+        </tr><tr>
+        <tr>
+            <td>First Name:</td>
+            <td id="customer-firstname-output"></td>
+        </tr><tr>
+        <td>Second Name:</td>
+        <td id="customer-secondname-output"></td>
+    </tr><tr>
+        <td>Phone Number:</td>
+        <td id="customer-phonenumber-output"></td>
+    </tr><tr>
+        <td>Service Requested:</td>
+        <td id="customer-service-output"></td>
+    </tr>
+        <tr>
+        <td>Total Bill:</td>
+        <td id="customer-total-bill"></td>
+    </tr>
+    </table><br>
+</div>
+
+<div id="payment-information-container">
+    <div id="payment-information-heading">Payment Information</div>
+    <div id="total-duration-container">
+        <span id="total-duration-heading">Total Duration:</span>
+        <span id="total-duration-output"></span>
+    </div>
+    <div id="service-rate-container">
+        <span id="service-rate-heading">Service Rate per Hour:</span>
+        <span id="service-rate-output"></span>
+    </div>
+    <div id="calculate-bill-btn-container">
+        <button id="calculate-bill-btn" onclick="return calculateCost()">Calculate Bill</button>
+    </div>
+    <div id="total-amount-container">Total Amount KES <span id="total-amount-output"></span></div>
+</div>
+<div id="mpesa-payment-container">
+    <div id="pay-securely-heading">Pay Securely with M-PESA</div>
+    <div id="mpesa-logo"></div>
+    <div id="payment-phone-number-container">
+        <label id="payment-phone-number-label" for="payment-phone-number-input">Phone Number</label>
+        <div id="payment-phone-number-input-container"><input id="payment-phone-number-input" type="text" minlength="10" maxlength="13" required placeholder="07XXXXXXXX OR +2547XXXXXXXX"></div>
+    </div>
+    <div id="pay-total-amnt-btn-container">
+        <button id="pay-total-amnt-btn">Pay Total Amount of KES <span id="total-amount"></span></button>
+    </div>
+</div>
+<script>
+    let firebaseConfig = {
+        apiKey: "AIzaSyD34lMguiFE6v42iogGbqXJwUWEQ8R1yb8",
+        authDomain: "pataplumberwebapp.firebaseapp.com",
+        databaseURL: "https://pataplumberwebapp-default-rtdb.firebaseio.com",
+        projectId: "pataplumberwebapp",
+        storageBucket: "pataplumberwebapp.appspot.com",
+        messagingSenderId: "982863800233",
+        appId: "1:982863800233:web:c12dd80a5489ca6cae86b8",
+        measurementId: "G-LQL7QRQKYG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/serviceDuration.js" type="text/javascript"></script>
+</body>
+</html>

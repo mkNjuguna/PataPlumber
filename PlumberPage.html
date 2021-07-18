@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Plumber Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/PataPlumberLogo.png">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.29.11.min.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body id="plumber_home_body">
+<!--<div id="plumberpage-bg"></div>-->
+<span class="navbar">
+    <a href="HomePage.html"><img  id="page_logo" src="images/PataPlumberLogo.png" alt="pagelogo"/></a>
+    <ul>
+<!--        <li><button type="button" id="about_us" onclick="window.location.href='About.html'">About</button></li>-->
+        <li><button type="button" id="sign_out" onclick="plumberSignOut()">Sign Out</button> </li>
+    </ul>
+</span>
+<div class="plumber-bio-container">
+    <p id="fill-bio-header">Fill In Your Bio To Get Started</p>
+    <form id="plumber-bio-form" onsubmit="uploadData()">
+        <label>Title:</label>
+        <select id="title-input" class="plumber-input-cells">
+            <option value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="miss">Miss</option>
+        </select>
+        <br><br>
+
+        <label>First Name:</label>
+        <input type="text"class="plumber-input-cells" id="plumber-firstname-input">
+        <br><br>
+
+        <label>Second Name:</label>
+        <input type="text" class="plumber-input-cells" id="plumber-secondname-input">
+        <br><br>
+
+        <label>Phone Number:</label>
+        <input type="text" minlength="10" maxlength="10" placeholder="+254xxxx OR 07xxx" class="plumber-input-cells" id="plumber-phonenumber-input">
+        <br><br>
+
+        <p id="upload-document-header">Upload Your Document For Verification</p>
+        <input name="document" type="file" id="plumber-document">
+        <br><br>
+
+        <p id="service-to-offer-header">What Service Would You Like To Offer?</p>
+        <label>Type of service:</label>
+        <select id="services-input">
+            <option value="Leakage">Leakages</option>
+            <option value="Plumbing Installation">Installations i.e. Toilet, Faucets, Taps</option>
+            <option value="Replacement of damaged installations">Replacement of damaged installations</option>
+            <option value="Unblocking of clogged or slow drainages">Unblocking of clogged or slow drainages</option>
+            <option value="Faulty Water Heater">Faulty Water Heater</option>
+            <option value="Washing Machine Installation">Washing Machine Installation</option>
+        </select><br><br>
+
+        <button class="bio-submit-btn" id="save-to-profile-btn" onclick="return uploadData()" type="button">Save to Profile</button>
+    </form>
+</div>
+<div id="plumber-geolocation-heading">
+    <h2>Your Live Location</h2>
+</div>
+<div id="plumber-map"></div>
+<div id="customer-request-container">
+    <div id="requests-heading">Incoming Requests</div>
+    <div id="request-message-output"></div>
+</div>
+
+<span id="plumber-profile-output-container">
+    <p id="plumber-profile-output-header">Your Profile:</p>
+
+    <form id="get-data-container">
+        <label for="search-number">Enter your mobile number:</label>
+    <input type="text" minlength="10" maxlength="10" placeholder="07xxx" id="search-number">
+        <div id="loadprofile-btn-container">
+            <button type="button" class="bio-submit-btn" onclick="getPlumberData()">Load Profile</button>
+        </div>
+    </form><br>
+    <table id="plumber-profile-output-table">
+        <tr>
+            <td>Title:</td>
+            <td id="plumber-title-output"></td>
+        </tr><tr>
+        <tr>
+            <td>First Name:</td>
+            <td id="plumber-firstname-output"></td>
+        </tr><tr>
+            <td>Second Name:</td>
+            <td id="plumber-secondname-output"></td>
+        </tr><tr>
+            <td>Phone Number:</td>
+            <td id="plumber-phonenumber-output"></td>
+        </tr><tr>
+            <td>Service to Offer:</td>
+            <td id="plumber-service-output"></td>
+        </tr>
+    </table><br>
+    <span id="plumber-profile-btn-container">
+    <button class="plumber-profile-btn" id="plumber-edit-btn" onclick="editPlumberData()">Edit Profile</button>
+    <button class="plumber-profile-btn" id="plumber-delete-btn" onclick="deletePlumberData()">Delete</button>
+    </span>
+</span>
+<script>
+    window.lat = null;
+    window.lng = null;
+
+    function getLocation(){
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(updatePosition);
+        }
+        return null;
+    }
+
+    function updatePosition(position){
+        if (position){
+            window.lat = position.coords.latitude;
+            window.lng = position.coords.longitude;
+        }
+    }
+
+    setInterval(function (){
+        updatePosition(getLocation());
+    }, 1000);
+
+    function currentLocation(){
+        return{
+            lat:window.lat, lng:window.lng
+        };
+    }
+
+    let map;
+    let mark;
+    let initialize = function (){
+        map = new google.maps.Map(document.getElementById('plumber-map'), {center:{lat:lat,lng:lng} ,zoom:15});
+        mark = new google.maps.Marker({position:{lat:lat, lng:lng}, map:map});
+    };
+    window.initialize = initialize;
+
+    let redraw = function (payload){
+        lat = payload.message.lat;
+        lng = payload.message.lng;
+        map.setCenter({lat:lat, lng:lng, alt:0});
+        mark.setPosition({lat:lat, lng:lng, alt:0});
+    };
+
+    let pnChannel = "Channel-hokpup6uk";
+    let pubnub = new PubNub({
+        publishKey: 'pub-c-18499567-1b17-4c19-9289-c8f0d110b7ec',
+        subscribeKey: 'sub-c-54cf9666-8873-11eb-a47e-8aa5932e3236'
+    });
+    pubnub.subscribe({channels: [pnChannel]});
+    pubnub.addListener({message:redraw});
+
+    setInterval(function (){
+        pubnub.publish({channel:pnChannel, message:currentLocation()});
+    }, 5000);
+</script>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCfdXe_R6jLIfk1TazlHW_y_e_L-YxfC5E&callback=initialize"></script>
+<script>
+    let firebaseConfig = {
+        apiKey: "AIzaSyD34lMguiFE6v42iogGbqXJwUWEQ8R1yb8",
+        authDomain: "pataplumberwebapp.firebaseapp.com",
+        databaseURL: "https://pataplumberwebapp-default-rtdb.firebaseio.com",
+        projectId: "pataplumberwebapp",
+        storageBucket: "pataplumberwebapp.appspot.com",
+        messagingSenderId: "982863800233",
+        appId: "1:982863800233:web:c12dd80a5489ca6cae86b8",
+        measurementId: "G-LQL7QRQKYG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/plumberCRUD.js" type="text/javascript"></script>
+<script src="js/signInUsers.js" type="text/javascript"></script>
+<script src="js/jobRequests.js" type="text/javascript"></script>
+</body>
+</html>
