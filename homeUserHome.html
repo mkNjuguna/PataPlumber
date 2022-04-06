@@ -148,8 +148,8 @@
     };
     let pnChannel = "Channel-hokpup6uk";
     let pubnub = new PubNub({
-        // publishKey:   'pub-c-18499567-1b17-4c19-9289-c8f0d110b7ec',
-        subscribeKey: 'sub-c-54cf9666-8873-11eb-a47e-8aa5932e3236'
+        // publishKey:   '',
+        subscribeKey: ''
     });
     pubnub.subscribe({channels: [pnChannel]});
     pubnub.addListener({message:redraw});
